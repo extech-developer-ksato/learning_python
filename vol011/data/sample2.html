@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<!--
+
+
+   _|_|_|    _|_|    _|_|_|    _|_|_|    _|_|_|      _|_|_|    _|_|_|    _|_|_|
+ _|        _|    _|  _|    _|  _|    _|  _|    _|  _|    _|  _|_|      _|_|
+ _|        _|    _|  _|    _|  _|    _|  _|    _|  _|    _|      _|_|      _|_|
+   _|_|_|    _|_|    _|    _|  _|    _|  _|_|_|      _|_|_|  _|_|_|    _|_|_|
+                                         _|
+                                         _|
+-->
+<html lang="ja" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope itemtype="http://schema.org/Event">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"fce4d6a551",applicationID:"60638475"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"fce4d6a551","applicationID":"60638475","transactionName":"YFwHbUQFD0NRAk1dWlkWI0xYBxVZXw8WV1pZVxVYRRdPU18TXBpYWFsMVVNKF1lVFkoOeFhbDFVTMghVRw==","queueTime":0,"applicationTime":108,"agent":""}</script>
+<meta http-equiv="content-style-type" content="text/css; charset=utf-8" />
+<meta name="keywords" content="connpass,コンパス,イベント,IT勉強会,検索,開催,募集,参加,ソーシャル連携,アクセス解析,手数料無料" />
+<meta name="description" content="2021/05/18 追記: 想定よりも参加希望の方が多いため、参加枠を増枠いたしました。  # #011カジュアルにゆるく学ぶPython勉強会[ビギナー歓迎]  ※そのときそのときで話題が異なります...！！！   ※今のところ回数未定です※水曜に開催していきます！  ## 【実施日時】2021年5月19日 20:00 ~ 21:00  ## 【実施場所】オンライン  Zoomを利用しますが、事前共有されたURLから当日ご参加ください。   ルームIDおよびパスコードはランダム生成です。他勉強会には利用できません。   参加者の皆様は、プライバシー保護の観点よりボイスとカメラはデフォ..." />
+<title>#011カジュアル勉強会 ゆるく学ぶPython勉強会 - connpass</title>
+
+
+
+<link type="text/css" href="https://connpass.com/static/css/connpass.css?20210518110015
+" rel="stylesheet" media="all" />
+
+<link href="https://connpass.com/static/css/exvalidation.css" type="text/css" rel="stylesheet" />
+
+  
+  
+<style>
+/*背景色*/
+body.page_group {
+  
+  background-color: #f7f7f7;
+  
+}
+/*カバー画像*/
+.group_header_area .group_cover {
+  
+  background-image: url(https://connpass-tokyo.s3.amazonaws.com/thumbs/c4/33/c4332f00270b7184ad57a275b7b048c3.png);
+  
+}
+</style>
+
+
+
+
+
+
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="connpass" />
+<meta property="fb:app_id" content="259235460759625" />
+
+
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@connpass_jp" />
+<meta name="twitter:url" content="https://extech-casual-learn-sendai.connpass.com/event/212493/?utm_campaign=twitter_card_event_212493&utm_source=twitter_card&utm_medium=twitter" />
+
+<meta property="og:title" content="#011カジュアル勉強会 ゆるく学ぶPython勉強会 (2021/05/19 20:00〜)" />
+<meta property="og:url" content="https://extech-casual-learn-sendai.connpass.com/event/212493/" />
+
+<meta property="og:image" content="https://connpass-tokyo.s3.amazonaws.com/thumbs/63/66/63668ec1eaef7c96c06b6e106ae8f6a0.png" />
+<meta property="og:description" content="2021/05/18 追記: 想定よりも参加希望の方が多いため、参加枠を増枠いたしました。  # #011カジュアルにゆるく学ぶPython勉強会[ビギナー歓迎]  ※そのときそのときで話題が異なります...！！！   ※今のところ回数未定です※水曜に開催していきます！  ## 【実施日時】2021年5月19日 20:00 ~ 21:00  ## 【実施場所】オンライン  Zoomを利用しますが、事前共有されたURLから当日ご参加ください。   ルームIDおよびパスコードはランダム生成です。他勉強会には利用できません。   参加者の皆様は、プライバシー保護の観点よりボイスとカメラはデフォ..." />
+
+<meta itemprop="name" content="#011カジュアル勉強会 ゆるく学ぶPython勉強会" />
+<meta itemprop="description" content="2021/05/18 追記: 想定よりも参加希望の方が多いため、参加枠を増枠いたしました。  # #011カジュアルにゆるく学ぶPython勉強会[ビギナー歓迎]  ※そのときそのときで話題が異なります...！！！   ※今のところ回数未定です※水曜に開催していきます！  ## 【実施日時】2021年5月19日 20:00 ~ 21:00  ## 【実施場所】オンライン  Zoomを利用しますが、事前共有されたURLから当日ご参加ください。   ルームIDおよびパスコードはランダム生成です。他勉強会には利用できません。   参加者の皆様は、プライバシー保護の観点よりボイスとカメラはデフォ..." />
+
+<meta itemprop="image" content="https://connpass-tokyo.s3.amazonaws.com/event/160248/9dcada193dfa46fcbcbd5e9a2a14842d.jpg" />
+
+
+
+
+
+
+
+
+<link rel="shortcut icon" href="https://connpass.com/static/img/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="apple-touch-icon-precomposed" href="https://connpass.com/static/img/apple_touch_icon.png" />
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+  if (typeof console == "undefined") {window.console={log: function () {}};console.warn = console.debug = console.log;}
+</script>
+
+<script type="text/javascript">
+  function cst(cat, evt, targetUrl) {
+    if (window._gaq) {
+      _gaq.push(['_trackSocial', cat, evt, targetUrl]);
+    } else {
+      console.log("trackSocial(" + cat + ", " + evt + ", " + targetUrl + ")");
+    }
+  };
+  function cet(cat, evt, label, value, non_interaction) {
+    if (!label) {
+      label = 'None';
+    }
+    if (window._gaq) {
+      _gaq.push(['_trackEvent', cat, evt, label, value, non_interaction]);
+    } else {
+      console.log("trackEvent(" + cat + ", " + evt + ", " + label + ", " + value + ", " + non_interaction + ")");
+    }
+  };
+  function tol(link, cat, evt, label, value, non_interaction) {
+    cet(cat, evt, label, value, non_interaction);
+    if (link) {
+      var func;
+      if (link.href) {
+        func = function() {
+          document.location.href = link.href;
+        };
+      } else {
+        if (link.submit) {
+          func = function() {
+            link.submit();
+          };
+        } else {
+          if (link.form) {
+            func = function() {
+              link.form.submit();
+            };
+          }
+        }
+      }
+      if (func) {
+        setTimeout(func, 100);
+      }
+    }
+  };
+</script>
+
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-26036000-1']);
+  _gaq.push(['_setDomainName', 'connpass.com']);
+  _gaq.push(['_setCustomVar', 1, 'Authenticated', 'false', 1]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+    <script type="text/javascript">
+        
+        var event_tech_tags = ["Python", "zoom"];
+    </script>
+
+
+<script language="JavaScript" type="text/javascript" charset="UTF-8" src="//cdn.bigmining.com/private/media/js/connpass_bigmining.js"></script>
+
+
+
+<script type="text/javascript" src="https://www.fourmtagservices.com/p/beproud/gYEA9y3QTzOtx4oppDBJ/pc.js"></script>
+
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script type="text/javascript">
+var path_value = location.pathname.substr(0,40);
+var parameter_value = location.search.substr(0, 40);
+var ref_value = "null";
+if (document.referrer){
+var ref_array=new Array();
+ref_array=document.referrer.split("/"); 
+ref_value = ref_array[2];}
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+
+
+
+  
+googletag.defineSlot('/21614746198/connpass_banner_middle', [[1, 1], [728, 90]], 'div-gpt-ad-1506474100733-0').addService(googletag.pubads());
+
+  
+googletag.defineSlot('/21614746198/connpass_rectangle_left', [[336, 280], [1, 1], [300, 250]], 'div-gpt-ad-1506475005574-0').addService(googletag.pubads());
+googletag.defineSlot('/21614746198/connpass_rectangle_right', [[1, 1], [300, 250], [336, 280]], 'div-gpt-ad-1506474215239-0').addService(googletag.pubads());
+
+  
+
+googletag.defineSlot('/21614746198/connpass_sidebarRectangle_topRight', [[1, 1], [300, 250], [336, 280]], 'div-gpt-ad-1506474577576-0').addService(googletag.pubads());
+
+googletag.defineSlot('/21614746198/connpass_detail_sidebarRectangle_underRight', ['fluid', [1, 1], [336, 280], [300, 250]], 'div-gpt-ad-1583823974340-0').addService(googletag.pubads());
+
+
+    googletag.pubads().setTargeting('URLs', path_value).setTargeting('Ref', ref_value).setTargeting('Para', parameter_value);
+    googletag.pubads().enableSingleRequest();
+    googletag.pubads().collapseEmptyDivs();
+    googletag.enableServices();
+  });
+</script>
+
+</head>
+
+<body class="page_group page_edit page_event vevent" id="event_detail">
+
+<div id="wrapper" class="lang_ja">
+
+  <div id="header">
+    <div class="container clearfix">
+      <h1><a href="https://connpass.com/" title="connpass - エンジニアをつなぐIT勉強会支援プラットフォーム"><img src="https://connpass.com/static/img/common/sitelogo_266x132_bp.png" alt="connpass - エンジニアをつなぐIT勉強会支援プラットフォーム" height="66"></a></h1>
+
+      
+        <form action="https://connpass.com/search/" method="GET" id="header_event_search_form">
+          <div class="header_search">
+            <input type="text" class="form_input_text" name="q" id="id_q" value="" placeholder="イベント検索">
+            <input type="hidden" name="start_from" value="2021/05/19">
+            <input type="hidden" name="start_to" value="2021/11/19">
+            <button type="submit" class="btn btn_default btn_size_small"><img src="https://connpass.com/static/img/common/icon_search.png" alt="イベント検索"></button>
+          </div>
+        </form>
+      
+
+      
+        <div class="header_nav_contents">
+          <ul>
+          
+            <li><a href="https://connpass.com/#category_link_list">カテゴリ一覧</a></li>
+          
+            <li><a href="https://connpass.com/explore/">新着イベント</a></li>
+          </ul>
+        </div>
+        
+          
+            <div class="header_nav_login">
+              <a class="btn btn_default login" href="https://connpass.com/login/?next=https%3A//connpass.com/event/212493/">ログイン・新規登録</a>
+            </div>
+          
+        
+      
+
+
+    </div>
+  </div>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="social_btn_area clearfix">
+    <div class="container">
+      <span class="hatena">
+        
+        <a href="http://b.hatena.ne.jp/entry/extech-casual-learn-sendai.connpass.com/event/212493/" class="hatena-bookmark-button" data-hatena-bookmark-title="#011カジュアル勉強会 ゆるく学ぶPython勉強会" data-hatena-bookmark-layout="simple-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+      </span>
+      <span class="facebook">
+        
+<fb:like href="https://extech-casual-learn-sendai.connpass.com/event/212493/" send="false" layout="button_count" width="100" show_faces="false"></fb:like>
+
+
+
+
+      </span>
+      <span class="twitter">
+        <a href="http://twitter.com/share" class="twitter-share-button" data-url="" data-text="#011カジュアル勉強会 ゆるく学ぶPython勉強会" data-lang="ja" data-related="connpass_jp" data-hashtags="データサイエンス"></a>
+      </span>
+    </div>
+  </div>
+
+
+
+<div id="contents" class="container main_side_column clearfix">
+  <div id="flash_message_area" style="display: none;">
+    
+  </div>
+
+  
+  <div class="clearfix">
+    
+      
+      <div id="main">
+        
+<div class="group_box">
+  <div class="group_inner event_header_area">
+
+    <h2 class="event_title">
+        <span class="label_status_event offer">
+            
+            <p class="month">5月</p>
+            <p class="day">19</p>
+        
+      </span>
+
+      #011カジュアル勉強会 ゆるく学ぶPython勉強会
+      <p class="event_subtitle">主宰: 株式会社エクテック</p>
+
+      <div class="EventBookmarkBox bookmark_area">
+        
+          
+        
+      </div>
+
+    </h2>
+    <p class="event_owner">主催 : 株式会社エクテック</p>
+
+    
+      <a href="https://connpass-tokyo.s3.amazonaws.com/thumbs/c5/95/c5958d7bffeee527ac7bff4ececa8024.png" target="_blank">
+        <div class="thumbnail" title="#011カジュアル勉強会 ゆるく学ぶPython勉強会" style="background-image:url(https://connpass-tokyo.s3.amazonaws.com/thumbs/c5/95/c5958d7bffeee527ac7bff4ececa8024.png);"></div>
+      </a>
+    
+
+    
+      <div class="label_hashtag">
+        ハッシュタグ
+        ：<a href="https://twitter.com/search?q=%23%E3%83%87%E3%83%BC%E3%82%BF%E3%82%B5%E3%82%A4%E3%82%A8%E3%83%B3%E3%82%B9" target="_blank">#データサイエンス</a>
+      </div>
+    
+
+  </div>
+
+  
+
+  <div class="group_inner event_ptype_area clearfix">
+    <table class="common_table th20">
+      <tbody>
+        <tr>
+          <th class="text_center">募集内容</th>
+          
+          
+          
+          <td class="participation">
+            <div class="ptypes">
+            
+            
+              <div class="ptype">
+                <p class="ptype_name">一般の方</p>
+                <p class="join_fee">
+                  
+                    無料
+                  
+                </p>
+                <p class="participants">
+                  <span class="determine">
+                    
+                    
+                      先着順
+                    
+                  </span><br>
+
+                  
+                    
+                      <span class="amount"><span>46</span>/60</span>人
+                    
+                  
+                </p>
+              </div>
+            
+            
+            
+              <div class="ptype">
+                <p class="ptype_name">学生の方</p>
+                <p class="join_fee">
+                  
+                    無料
+                  
+                </p>
+                <p class="participants">
+                  <span class="determine">
+                    
+                    
+                      先着順
+                    
+                  </span><br>
+
+                  
+                    
+                      <span class="amount"><span>2</span>/5</span>人
+                    
+                  
+                </p>
+              </div>
+            
+            
+            </div>
+          </td>
+          
+        </tr>
+
+  
+  
+
+  
+
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+<div class="text_center main_content_banner">
+
+  
+  <div id='div-gpt-ad-1506474100733-0'>
+  <script>
+  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1506474100733-0'); });
+  </script>
+  </div>
+
+</div>
+
+
+
+<div class="group_box">
+  
+  <h3 class="event_detail_title"><span class="icon_gray_desc">イベントの説明</span></h3>
+  <div id="editor_area" class="group_inner clearfix">
+    <p><strong>2021/05/18 追記: 想定よりも参加希望の方が多いため、参加枠を増枠いたしました。</strong>  </p>
+<h1>#011カジュアルにゆるく学ぶPython勉強会[ビギナー歓迎]</h1>
+<p>※そのときそのときで話題が異なります...！！！<br>
+※今のところ回数未定です※水曜に開催していきます！</p>
+<h2>【実施日時】2021年5月19日 20:00 ~ 21:00</h2>
+<h2>【実施場所】オンライン</h2>
+<p><strong>Zoomを利用しますが、事前共有されたURLから当日ご参加ください。</strong><br>
+<strong>ルームIDおよびパスコードはランダム生成です。他勉強会には利用できません。</strong><br>
+<strong>参加者の皆様は、プライバシー保護の観点よりボイスとカメラはデフォルトでOFFとなります</strong><br>
+<strong>質疑につきましてはZoomチャットでお願い致します。</strong>  </p>
+<p>※Zoomで配信します。配信先URLは、イベント前日と当日夕方に連絡します。<br>
+  connpassアカウントに紐づいているメールアドレス宛に届きますので、そちらをご確認ください。<br>
+※多少、音声・画質に問題がでてくる可能性もありますことをご了承ください。<br>
+  なお、接続に関する不具合対応方法やクレーム等に対してはお受けいたしかねます。  </p>
+<h2>【対象】</h2>
+<p><strong>　・Pythonに関心のある方</strong><br>
+<strong>　・Python経験２年未満の方</strong><br>
+<strong>上記以外でも、どなたでもご参加いただけます！</strong><br>
+<strong>何度か開催される勉強会に継続的に参加していくことで、Pythonの基礎を体系的に理解していくことを目的としています</strong>  </p>
+<h2>【実施概要】</h2>
+<p>※個人的な知見が含まれているため、一般論から離れる場合もありますのでご了承ください<strong><br>
+</strong> カジュアル勉強会は、オンライン開催になっております。**     </p>
+<p><strong> ↓↓↓タイムスケジュール↓↓↓ </strong>  </p>
+<p><strong> 19:45 ~ 20:00 (受付)</strong><br>
+<strong> 20:00 ~ 21:00 (勉強会)</strong><br>
+・difflib --- 差分の計算モジュール<br>
+・textwrap --- テキストの折り返しや切り詰めをおこなうモジュール  </p>
+<p>※終了時刻は、内容によって前後しますので、あらかじめご了承ください<br>
+※当日最後に 次回以降や, その他コンテンツのご紹介をさせていただきます<br>
+※当日投影する資料等につきましてはご希望する方にのみ共有させていただきます(PDF等)</p>
+  </div>
+  
+
+  
+</div>
+
+
+
+
+  <div class="text_center mt_20 mb_20">
+    <div class="inline mrl_10">
+    
+      
+      <div id='div-gpt-ad-1506475005574-0'>
+      <script>
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1506475005574-0'); });
+      </script>
+      </div>
+    
+    </div>
+    <div class="inline mrl_10">
+    
+      
+      <div id='div-gpt-ad-1506474215239-0'>
+      <script>
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1506474215239-0'); });
+      </script>
+      </div>
+    
+    </div>
+  </div>
+
+
+
+<div class="group_box">
+  <h3 class="event_detail_title">
+    <span class="icon_gray_doc">資料</span>
+    
+      <span class="right"><a href="https://extech-casual-learn-sendai.connpass.com/event/212493/presentation/" class="btn btn_default btn_size_small">資料をもっと見る／編集する</a></span>
+    
+  </h3>
+  <div class="group_inner event_doc_area clearfix">
+    
+    <div class="no_data_area"><p>資料が投稿されると、最新の3件が表示されます。</p></div>
+    
+  </div>
+</div>
+
+<div class="group_box" id="feed">
+  <h3 class="title">フィード</h3>
+  <div class="group_inner event_feed_area eventTabContent">
+
+    
+    <div class="feed_area clearfix">
+      
+        
+
+<div class="thumb36_list">
+  
+  <span class="thumbnail">
+    
+      <a class="image_link" href="https://connpass.com/user/kkkazus/">
+        
+          <img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/a4/05/a4052ce457b8d048788f5714b16dccd7.png" width="36" height="36" title="株式会社エクテック 広報部" alt="株式会社エクテック 広報部" />
+        
+      </a>
+    
+  </span>
+
+  <p class="message">
+
+  <a href="https://connpass.com/user/kkkazus/">株式会社エクテック 広報部</a> さんが <a href="https://extech-casual-learn-sendai.connpass.com/event/212493/">#011カジュアル勉強会 ゆるく学ぶPython勉強会</a> を公開しました。
+  
+
+</p>
+  <p class="date">2021/05/05 18:28</p>
+  
+  
+  <p class="comment"><span class="icon_comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会 を公開しました！</span></p>
+  
+
+</div>
+
+
+      
+    </div>
+
+
+    
+
+  </div>
+</div>
+
+
+
+      </div>
+    
+    
+    <div id="side_area">
+      
+
+
+<div class="group_box event_group_area">
+  <h3 class="title">
+    グループ
+
+    <div class="GroupMembership group_btn_area right">
+    
+      
+      <form action="https://connpass.com/login/" method="GET">
+        <input type="hidden" name="next" value="https://connpass.com/event/212493/?gmem=1" />
+          <button class="GroupMembershipButton btn btn_size_small btn_default" onClick="cet('Series', 'unwatch');" title="このグループのメンバーになるにはログインしてください">メンバーになる</button>
+      </form>
+      
+    
+    </div>
+
+  </h3>
+
+  <div class="group_inner">
+    <p class="group_title">
+      <a href="https://extech-casual-learn-sendai.connpass.com/">エクテック カジュアル勉強会 @仙台</a>
+    </p>
+
+    
+    <div class="clearfix mt_5">
+      
+        <a href="https://extech-casual-learn-sendai.connpass.com/" class="thumbnail image_bg" style="background-image: url(https://connpass-tokyo.s3.amazonaws.com/thumbs/71/e9/71e9b6b8ebc8a4f193b10480b3760c24.png);" title="エクテック カジュアル勉強会 @仙台"></a>
+      
+
+      <div class="group_date_area text_center">
+        <p>
+          イベント数
+          <a href="https://extech-casual-learn-sendai.connpass.com/event/">89回</a>
+        </p>
+        <p>
+          メンバー数
+          <a href="https://extech-casual-learn-sendai.connpass.com/participation/">612人</a>
+        </p>
+      </div>
+    </div>
+
+    
+
+  </div>
+</div>
+
+
+
+<div class="group_box">
+
+  <div class="group_inner event_schedule_area text_center">
+    <div class="clearfix">
+    <span class="label_status_event offer">開催前</span>
+
+      
+      
+        <span class="dtstart">
+          <span class="value-title" title="2021-05-19T11:00:00Z"></span>
+          <p class="ymd">2021/05/19(水)</p>
+          <span class="hi">20:00</span>
+        </span>
+      
+      
+      〜
+      
+      
+        <span class="dtend">
+          <span class="value-title" title="2021-05-19T12:00:00Z"></span>
+          
+            21:00
+          
+        </span>
+    
+    
+    </div>
+    <div class="calendar_btn_area EventBookmarkBox clearfix text_center">
+      
+      
+        <a href="http://www.google.com/calendar/event?action=TEMPLATE&text=%23011%E3%82%AB%E3%82%B8%E3%83%A5%E3%82%A2%E3%83%AB%E5%8B%89%E5%BC%B7%E4%BC%9A%20%E3%82%86%E3%82%8B%E3%81%8F%E5%AD%A6%E3%81%B6Python%E5%8B%89%E5%BC%B7%E4%BC%9A&dates=20210519T110000Z/20210519T120000Z&details=https%3A//extech-casual-learn-sendai.connpass.com/event/212493/&location=%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3&trp=false&sprop=https%3A//extech-casual-learn-sendai.connpass.com/event/212493/&sprop=name:connpass" target="_blank"><span class="icon_gcal_add">Googleカレンダー</span></a>
+        <a href="https://connpass.com/event/212493.ics"><span class="icon_ics_dl">icsファイル</span></a>
+      
+      
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+<div class="group_inner event_entry_area text_center is_entry">
+  
+  
+    
+
+
+
+
+
+
+
+
+  
+  
+
+    
+    
+      <form action="https://connpass.com/login/" method="GET">
+      
+      <input type="hidden" name="next" value="https://connpass.com/event/212493/join/" />
+        <p class="em mb_5">イベントに申し込むには<br />ログインしてください</p>
+        <button class="btn btn_high_priority btn_size_large btn_width_full" id="ParticipateButton" type="submit">ログイン・会員登録</button>
+      </form>
+    
+
+  
+
+
+  
+</div>
+
+
+
+
+
+
+
+  <div class="group_inner conflict_join_area">
+    <p>開催日時が重複しているイベントに申し込んでいる場合、このイベントには申し込むことができません</p>
+  </div>
+
+
+
+    <div class="group_inner event_entry_area">
+      <p class="text_center period">
+        募集期間<br />
+        2021/05/05(水) 10:00
+        〜<br />
+        
+          2021/05/19(水)
+        
+        18:00
+      </p>
+    </div>
+
+
+
+  <div class="group_inner event_inquiry_area">
+    
+      <h3 class="sub_title"><a href="https://connpass.com/login/?next=https%3A//connpass.com/event/212493/inquiry/"><span class="icon_gray_mail">イベントへのお問い合わせ</span></a></h3>
+    
+  </div>
+
+</div>
+
+
+
+<div class="side_sec_box side_ads_area">
+
+  
+  <div id='div-gpt-ad-1506474577576-0'>
+  <script>
+  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1506474577576-0'); });
+  </script>
+  </div>
+
+</div>
+
+
+
+<div class="group_box">
+  <div class="group_inner event_place_area">
+    <h3 class="sub_title"><span class="icon_gray_place">会場</span></h3>
+      
+        
+          <p class="place_name em"><span class="fn org">オンライン</span></p>
+        
+        
+        <p class="adr">
+          <span class="value-title" title="オンライン"></span>
+          オンライン
+        </p>
+        <span class="geo">
+          <span class="latitude"><span class="value-title" title="None"></span></span>
+          <span class="longitude"><span class="value-title" title="None"></span></span>
+        </span>
+        
+      
+
+    <div class="map_image mt_5">
+    
+      <img src="https://connpass.com/static/img/common/no_map.png" title="オンライン" width="288" height="288" alt="オンライン" />
+    
+    </div>
+
+  </div>
+</div>
+
+<div class="group_box">
+  <h3 class="title">管理者</h3>
+  <div class="group_inner event_owner_area">
+    <ul class="owner_list clearfix">
+      
+      
+      <li>
+        <a class="image_link" href="https://connpass.com/user/kkkazus/open/" title="株式会社エクテック 広報部"><img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/00/d9/00d9f008da18762e4f6435021633d785.png" width="23" height="23" title="株式会社エクテック 広報部" alt="株式会社エクテック 広報部" />株式会社エクテック 広報部</a>
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+<div class="group_box participants_area">
+  
+    <h4 class="event_detail_title corner_top_6">
+      
+        <a href="https://extech-casual-learn-sendai.connpass.com/event/212493/participation/#participants">参加者（48人）</a>
+      
+    </h4>
+    <div class="group_inner event_p_area">
+
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/T-Nishida/">
+          
+            <img src="https://connpass.com/static/img/common/user_no_image.gif" width="23" height="23" alt="T-Nishida" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/T-Nishida/">T-Nishida</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会 に参加を申し込みました！</p>
+    </div>
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/Kyosuke-Fukui/">
+          
+            <img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/b6/fa/b6faa3253db01c3197d82e881b20a05b.png" alt="Kyosuke-Fukui" width="23" height="23" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/Kyosuke-Fukui/">Kyosuke-Fukui</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会に参加を申し込みました！</p>
+    </div>
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/jun2020/">
+          
+            <img src="https://connpass.com/static/img/common/user_no_image.gif" width="23" height="23" alt="Jun" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/jun2020/">Jun</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会に参加を申し込みました！</p>
+    </div>
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/SHINTARO_KASAI/">
+          
+            <img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/bc/32/bc32b482aea533a5d7af1edbe9954fe1.png" alt="SHINTARO_KASAI" width="23" height="23" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/SHINTARO_KASAI/">SHINTARO_KASAI</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会 に参加を申し込みました！</p>
+    </div>
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/auzon/">
+          
+            <img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/af/15/af15c7075c5eafd1f100c5e753883a47.png" alt="auzon" width="23" height="23" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/auzon/">auzon</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会 に参加を申し込みました！</p>
+    </div>
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/MakotoTamai/">
+          
+            <img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/d9/c6/d9c6d427f751eccdc763a7b53e8db1a8.png" alt="MakotoTamai" width="23" height="23" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/MakotoTamai/">MakotoTamai</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会に参加を申し込みました！</p>
+    </div>
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/kazoka/">
+          
+            <img src="https://connpass.com/static/img/common/user_no_image.gif" width="23" height="23" alt="kazoka" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/kazoka/">kazoka</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会 に参加を申し込みました！</p>
+    </div>
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/propeller85/">
+          
+            <img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/90/ff/90ffd1c443ebeeb1b39f9af9a907222e.png" alt="propeller85" width="23" height="23" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/propeller85/">propeller85</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会に参加を申し込みました！</p>
+    </div>
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/KogaSense/">
+          
+            <img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/df/78/df78195d8bcfdb3577985491968b4de8.png" alt="KogaSense" width="23" height="23" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/KogaSense/">KogaSense</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会 に参加を申し込みました！</p>
+    </div>
+    
+    <div class="thumb25_list">
+      
+        <a class="thumbnail image_link" href="https://connpass.com/user/msnaru/">
+          
+            <img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/fa/5a/fa5ae9b9bdab76dadbf7bf4d9f88d0d8.png" alt="うずしお" width="23" height="23" />
+          
+        </a>
+      
+      <p class="name">
+      
+        <a href="https://connpass.com/user/msnaru/">うずしお</a>
+      
+      </p>
+      <p class="comment">#011カジュアル勉強会 ゆるく学ぶPython勉強会に参加を申し込みました！</p>
+    </div>
+    
+    <p class="p text_right">
+      
+        <a href="https://extech-casual-learn-sendai.connpass.com/event/212493/participation/#participants"><span class="icon_red_four_right"></span>参加者一覧（48人）</a>
+      
+    </p>
+  </div>
+  
+
+
+  
+
+  
+    <h4 class="event_detail_title">
+      
+        <a href="https://extech-casual-learn-sendai.connpass.com/event/212493/participation/#cancelled">キャンセルした人（3人）</a>
+      
+    </h4>
+    <div class="group_inner event_p_area">
+    <ul class="clearfix thumb24_block">
+      
+      <li>
+        
+          <a class="image_link" href="https://connpass.com/user/oka4181/">
+            
+              <img src="https://connpass.com/static/img/common/user_no_image.gif" alt="oka4181" width="24" height="24">
+            </a>
+        
+      </li>
+      
+      <li>
+        
+          <a class="image_link" href="https://connpass.com/user/nishizawa-k/">
+            
+              <img src="https://connpass.com/static/img/common/user_no_image.gif" alt="nishizawa-k" width="24" height="24">
+            </a>
+        
+      </li>
+      
+      <li>
+        
+          <a class="image_link" href="https://connpass.com/user/SeiKaneko/">
+            
+              <img src="https://connpass-tokyo.s3.amazonaws.com/thumbs/0c/d1/0cd165948c8c58f8d3376389abebbf40.png" alt="SeiKaneko" width="24" height="24">
+            </a>
+        
+      </li>
+      
+    </ul>
+    
+  </div>
+  
+</div>
+
+
+
+<div class="side_sec_box side_ads_area">
+
+<!-- /21614746198/connpass_detail_sidebarRectangle_underRight -->
+<div id='div-gpt-ad-1583823974340-0'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1583823974340-0'); });
+  </script>
+</div>
+
+</div>
+
+
+
+<div id="CurrentEventObj" style="display:none;"></div>
+
+
+
+    </div>
+    
+  </div>
+  
+</div>
+
+
+
+
+  <div id="footer">
+    <div class="footer_link_area clearfix">
+      <div class="layout_column_4 footer_site">
+        <div class="mb_5"><a href="https://connpass.com/" title="サイトのトップページへ"><img src="https://connpass.com/static/img/common/sitelogo_295x100.png" alt="connpass" class="connpass">エンジニアをつなぐ<br>IT勉強会支援プラットフォーム</a></div>
+        <div class="mb_5">
+        
+        <a href="https://apps.apple.com/jp/app/connpass/id723317753?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; height: 40px;" target="_blank" onClick="cet('Marketing', 'iphone_app_banner', 'footer_banner', undefined, true);"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83&amp;releaseDate=1382227200&h=43b50fa7b28bcf238fe341a9863eaab5" alt="Download on the App Store" style="height: 40px;"></a>
+        
+        </div>
+        <a href="http://twitter.com/connpass_jp" target="_blank" class="mr_5"><img src="https://connpass.com/static/img/common/icon_twitter_official.png" alt="Twitter公式アカウント"></a>
+        <a href="http://www.facebook.com/connpass" target="_blank"><img src="https://connpass.com/static/img/common/icon_facebook_official.png" alt="Facebookページ"></a>
+
+      </div>
+      <div class="layout_column_4 footer_help">
+        <ul class="cmn_list">
+          <li><a href="https://help.connpass.com/" target="_blank" title="connpassのヘルプ">ご利用ガイド</a></li>
+          <li><a href="https://help.connpass.com/faq" target="_blank">よくある質問</a></li>
+          
+          <li><a href="https://connpass.com/term/">利用規約</a></li>
+          <li><a href="https://www.beproud.jp/company/" target="_blank">運営会社</a></li>
+          <li><a href="https://connpass.com/about/api/">API</a></li>
+          <li><a href="https://connpass.com/law/">特定商取引法に基づく表示</a></li>
+          <li><a href="https://connpass.com/privacy/">プライバシーポリシー</a></li>
+        </ul>
+      </div>
+      <div class="layout_column_4 footer_sns">
+      <ul class="cmn_list">
+        <li class="li_icon_hint"><a href="https://connpass.com/about/" title="connpassの機能をタイムライン風に紹介">機能紹介</a></li>
+        <li class="li_icon_hint"><a href="https://connpass.com/about/comparison/" title="connpassと他イベントサイトとの機能比較">他サービスとの比較</a></li>
+        <li class="li_icon"><a href="https://connpass.com/explore/">新着イベント</a></li>
+        <li class="li_icon_feed"><a href="https://connpass.com/explore/ja.atom" target="_blank">新着イベントfeed</a></li>
+
+      </ul>
+      </div>
+      <div class="layout_column_4 footer_feedback">
+      
+
+<div class="event_feedback_area">
+  
+    
+    
+    <p>イベントへの問い合わせは<a href="https://connpass.com/login/?next=https%3A//connpass.com/event/212493/inquiry/">こちら</a>をご利用ください</p>
+  
+</div>
+
+
+      </div>
+    </div>
+    <div class="footer_link_area clearfix">
+      <div class="footer_beproud"><a href="https://www.beproud.jp/company/" target="_blank"><img src="https://connpass.com/static/img/common/logo_beproud.png" alt="BePROUD" title="BePROUD" />connpass は株式会社ビープラウドが開発・運営しています</a></div>
+      <address>&copy; 2021 BeProud, Inc. All Rights Reserved.</address>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+
+<script id="EventCreateTemplate" type="text/html">
+  <div class="popup">
+    <div class="popup_wrapper">
+      <div class="popup_header">
+        <h2 class="popup_title">イベントを作成する</h2>
+        <span class="close_btn_area">
+          <span class="btn btn_default btn_size_small corner_none modal-close" title="閉じる"><span class="icon_black_close"></span></span>
+        </span>
+      </div>
+      <div class="popup_contents text_center">
+        <p class="font_16 mb_10"><strong>イベント名を入力してください</strong></p>
+        <input name="title" type="text" class="form_input_text form_width_450 font_18">
+
+        <div class="mt_10 mb_30">
+          <button type="submit" class="EventCreateSubmit btn btn_action btn_size_large" onClick="cet('Create', 'create_event');">イベントを作成</button>
+        </div>
+        <div class="right">
+          <a href="https://connpass.com/group/new/"><span class="icon_red_four_right"></span>グループを作成</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>
+
+<script id="MessageTemplate" type="text/html">
+  <p class="message <%= level %>"><%- message %></p>
+</script>
+
+
+<div id="fb-root"></div>
+
+
+
+
+
+
+<div id="CurrentUserObj" style="display:none;" ></div>
+<div id="CSRFToken" style="display:none;" data-csrftoken="nC1OqPSvFaY9WoefQrAlXQ7PxtBTzRbaeNdeEqtQ5aOdblUqp81feAhBA3hgvKAR"></div>
+
+
+<script type="text/javascript" src="//d-cache.microad.jp/js/td_cnp_access.js"></script>
+<script type="text/javascript">
+  microadTd.CNP.start({"article_keyword": ["Python", "zoom"]})
+</script>
+
+
+<script type="text/javascript" src="https://connpass.com/static/js/require.js?20210518110015
+"></script>
+<script type="text/javascript" src="https://connpass.com/static/js/connpass.min.js?20210518110015
+"></script>
+<script type="text/javascript">
+require.config({
+  
+  baseUrl: 'https://connpass.com/static/js/',
+  locale: 'ja',
+
+  config: {
+    'csrf': {
+      CSRF_COOKIE_NAME: 'connpass-csrftoken'
+    },
+    'sanca': {
+      
+      LOG_LEVEL: "WARNING",
+      HTTP_HOST: 'connpass.com',
+      STATIC_URL: 'https://connpass.com/static/',
+      MEDIA_URL: 'https://connpass.com/media/',
+      API_BASE_URL: 'https://extech-casual-learn-sendai.connpass.com/api'
+    }
+  }
+});
+</script>
+
+
+<script type="text/javascript">
+  require([
+    'jquery', 'jquerytools/tooltip.dynamic',
+    'jquerytools/tooltip.slide', 'design'
+  ], function($, Views) {
+    $(function() {
+      $('.Help').tooltip({
+        effect: 'slide',
+        position: 'bottom center',
+        offset: [20, 0],
+      }).dynamic({
+        bottom: {
+          direction: 'down',
+          bounce: true
+        }
+      });
+    });
+  });
+
+  
+  
+  require(['jquery', 'cs!sanca/views/personal_menu'], function($, Views) {
+    var personal_menu = new Views.PersonalMenu({
+      el: '#header',
+      dropdown_el: '#personalMenu'
+    });
+  });
+
+  require(['jquery', 'cs!sanca/views/feedback'], function($, Views) {
+    var feedbackform = new Views.FeedbackView({
+      el: '#FeedbackForm'
+    });
+  });
+  
+  
+
+
+</script>
+<script type="text/javascript">
+  window.fbAsyncInit = function() {
+    FB.init({
+      version: 'v4.0',
+      status: true,
+      appId: '259235460759625',
+      xfbml: true  // Like btn
+    });
+    FB.Event.subscribe('edge.create', function(targetUrl) {
+      typeof cst === "function" && cst('facebook', 'like', targetUrl);
+    });
+    FB.Event.subscribe('edge.remove', function(targetUrl) {
+      typeof cst === "function" && cst('facebook', 'unlike', targetUrl);
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/ja_JP/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script type="text/javascript">
+require([
+    'jquery', 'underscore', 'cs!sanca/models/event', 'cs!sanca/views/event_detail', 'cs!sanca/models/group',
+], function($, _, Models, Views) {
+  $(function() {
+    
+    $.post('https://extech-casual-learn-sendai.connpass.com/stats/track/?url=https%3A//extech-casual-learn-sendai.connpass.com/event/212493/&profile=event/212493&referrer=' + encodeURI(document.referrer));
+
+    var detail_view = new Views.EventDetailView({
+      
+      el: '#event_detail',
+      model: new Models.Event({"id": 212493, "title": "#011\u30ab\u30b8\u30e5\u30a2\u30eb\u52c9\u5f37\u4f1a \u3086\u308b\u304f\u5b66\u3076Python\u52c9\u5f37\u4f1a", "series": 9605, "sub_title": "\u4e3b\u5bb0: \u682a\u5f0f\u4f1a\u793e\u30a8\u30af\u30c6\u30c3\u30af", "description_input": "**2021/05/18 \u8ffd\u8a18: \u60f3\u5b9a\u3088\u308a\u3082\u53c2\u52a0\u5e0c\u671b\u306e\u65b9\u304c\u591a\u3044\u305f\u3081\u3001\u53c2\u52a0\u67a0\u3092\u5897\u67a0\u3044\u305f\u3057\u307e\u3057\u305f\u3002**  \n# #011\u30ab\u30b8\u30e5\u30a2\u30eb\u306b\u3086\u308b\u304f\u5b66\u3076Python\u52c9\u5f37\u4f1a[\u30d3\u30ae\u30ca\u30fc\u6b53\u8fce]\n  \n\u203b\u305d\u306e\u3068\u304d\u305d\u306e\u3068\u304d\u3067\u8a71\u984c\u304c\u7570\u306a\u308a\u307e\u3059...\uff01\uff01\uff01  \n\u203b\u4eca\u306e\u3068\u3053\u308d\u56de\u6570\u672a\u5b9a\u3067\u3059\u203b\u6c34\u66dc\u306b\u958b\u50ac\u3057\u3066\u3044\u304d\u307e\u3059\uff01\n\n## \u3010\u5b9f\u65bd\u65e5\u6642\u30112021\u5e745\u670819\u65e5 20:00 ~ 21:00\n## \u3010\u5b9f\u65bd\u5834\u6240\u3011\u30aa\u30f3\u30e9\u30a4\u30f3\n**Zoom\u3092\u5229\u7528\u3057\u307e\u3059\u304c\u3001\u4e8b\u524d\u5171\u6709\u3055\u308c\u305fURL\u304b\u3089\u5f53\u65e5\u3054\u53c2\u52a0\u304f\u3060\u3055\u3044\u3002**  \n**\u30eb\u30fc\u30e0ID\u304a\u3088\u3073\u30d1\u30b9\u30b3\u30fc\u30c9\u306f\u30e9\u30f3\u30c0\u30e0\u751f\u6210\u3067\u3059\u3002\u4ed6\u52c9\u5f37\u4f1a\u306b\u306f\u5229\u7528\u3067\u304d\u307e\u305b\u3093\u3002**  \n**\u53c2\u52a0\u8005\u306e\u7686\u69d8\u306f\u3001\u30d7\u30e9\u30a4\u30d0\u30b7\u30fc\u4fdd\u8b77\u306e\u89b3\u70b9\u3088\u308a\u30dc\u30a4\u30b9\u3068\u30ab\u30e1\u30e9\u306f\u30c7\u30d5\u30a9\u30eb\u30c8\u3067OFF\u3068\u306a\u308a\u307e\u3059**  \n**\u8cea\u7591\u306b\u3064\u304d\u307e\u3057\u3066\u306fZoom\u30c1\u30e3\u30c3\u30c8\u3067\u304a\u9858\u3044\u81f4\u3057\u307e\u3059\u3002**  \n\n\u203bZoom\u3067\u914d\u4fe1\u3057\u307e\u3059\u3002\u914d\u4fe1\u5148URL\u306f\u3001\u30a4\u30d9\u30f3\u30c8\u524d\u65e5\u3068\u5f53\u65e5\u5915\u65b9\u306b\u9023\u7d61\u3057\u307e\u3059\u3002  \n  connpass\u30a2\u30ab\u30a6\u30f3\u30c8\u306b\u7d10\u3065\u3044\u3066\u3044\u308b\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u5b9b\u306b\u5c4a\u304d\u307e\u3059\u306e\u3067\u3001\u305d\u3061\u3089\u3092\u3054\u78ba\u8a8d\u304f\u3060\u3055\u3044\u3002  \n\u203b\u591a\u5c11\u3001\u97f3\u58f0\u30fb\u753b\u8cea\u306b\u554f\u984c\u304c\u3067\u3066\u304f\u308b\u53ef\u80fd\u6027\u3082\u3042\u308a\u307e\u3059\u3053\u3068\u3092\u3054\u4e86\u627f\u304f\u3060\u3055\u3044\u3002  \n  \u306a\u304a\u3001\u63a5\u7d9a\u306b\u95a2\u3059\u308b\u4e0d\u5177\u5408\u5bfe\u5fdc\u65b9\u6cd5\u3084\u30af\u30ec\u30fc\u30e0\u7b49\u306b\u5bfe\u3057\u3066\u306f\u304a\u53d7\u3051\u3044\u305f\u3057\u304b\u306d\u307e\u3059\u3002  \n## \u3010\u5bfe\u8c61\u3011  \n**\u3000\u30fbPython\u306b\u95a2\u5fc3\u306e\u3042\u308b\u65b9**  \n**\u3000\u30fbPython\u7d4c\u9a13\uff12\u5e74\u672a\u6e80\u306e\u65b9**  \n**\u4e0a\u8a18\u4ee5\u5916\u3067\u3082\u3001\u3069\u306a\u305f\u3067\u3082\u3054\u53c2\u52a0\u3044\u305f\u3060\u3051\u307e\u3059\uff01**  \n**\u4f55\u5ea6\u304b\u958b\u50ac\u3055\u308c\u308b\u52c9\u5f37\u4f1a\u306b\u7d99\u7d9a\u7684\u306b\u53c2\u52a0\u3057\u3066\u3044\u304f\u3053\u3068\u3067\u3001Python\u306e\u57fa\u790e\u3092\u4f53\u7cfb\u7684\u306b\u7406\u89e3\u3057\u3066\u3044\u304f\u3053\u3068\u3092\u76ee\u7684\u3068\u3057\u3066\u3044\u307e\u3059**  \n## \u3010\u5b9f\u65bd\u6982\u8981\u3011   \n\u203b\u500b\u4eba\u7684\u306a\u77e5\u898b\u304c\u542b\u307e\u308c\u3066\u3044\u308b\u305f\u3081\u3001\u4e00\u822c\u8ad6\u304b\u3089\u96e2\u308c\u308b\u5834\u5408\u3082\u3042\u308a\u307e\u3059\u306e\u3067\u3054\u4e86\u627f\u304f\u3060\u3055\u3044**  \n** \u30ab\u30b8\u30e5\u30a2\u30eb\u52c9\u5f37\u4f1a\u306f\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u958b\u50ac\u306b\u306a\u3063\u3066\u304a\u308a\u307e\u3059\u3002**     \n  \n** \u2193\u2193\u2193\u30bf\u30a4\u30e0\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb\u2193\u2193\u2193 **  \n  \n** 19:45 ~ 20:00 (\u53d7\u4ed8)**  \n** 20:00 ~ 21:00 (\u52c9\u5f37\u4f1a)**  \n\u30fbdifflib --- \u5dee\u5206\u306e\u8a08\u7b97\u30e2\u30b8\u30e5\u30fc\u30eb  \n\u30fbtextwrap --- \u30c6\u30ad\u30b9\u30c8\u306e\u6298\u308a\u8fd4\u3057\u3084\u5207\u308a\u8a70\u3081\u3092\u304a\u3053\u306a\u3046\u30e2\u30b8\u30e5\u30fc\u30eb  \n\n\u203b\u7d42\u4e86\u6642\u523b\u306f\u3001\u5185\u5bb9\u306b\u3088\u3063\u3066\u524d\u5f8c\u3057\u307e\u3059\u306e\u3067\u3001\u3042\u3089\u304b\u3058\u3081\u3054\u4e86\u627f\u304f\u3060\u3055\u3044  \n\u203b\u5f53\u65e5\u6700\u5f8c\u306b \u6b21\u56de\u4ee5\u964d\u3084, \u305d\u306e\u4ed6\u30b3\u30f3\u30c6\u30f3\u30c4\u306e\u3054\u7d39\u4ecb\u3092\u3055\u305b\u3066\u3044\u305f\u3060\u304d\u307e\u3059  \n\u203b\u5f53\u65e5\u6295\u5f71\u3059\u308b\u8cc7\u6599\u7b49\u306b\u3064\u304d\u307e\u3057\u3066\u306f\u3054\u5e0c\u671b\u3059\u308b\u65b9\u306b\u306e\u307f\u5171\u6709\u3055\u305b\u3066\u3044\u305f\u3060\u304d\u307e\u3059(PDF\u7b49)", "description": "\u003cp\u003e\u003cstrong\u003e2021/05/18 \u8ffd\u8a18: \u60f3\u5b9a\u3088\u308a\u3082\u53c2\u52a0\u5e0c\u671b\u306e\u65b9\u304c\u591a\u3044\u305f\u3081\u3001\u53c2\u52a0\u67a0\u3092\u5897\u67a0\u3044\u305f\u3057\u307e\u3057\u305f\u3002\u003c/strong\u003e  \u003c/p\u003e\n\u003ch1\u003e#011\u30ab\u30b8\u30e5\u30a2\u30eb\u306b\u3086\u308b\u304f\u5b66\u3076Python\u52c9\u5f37\u4f1a[\u30d3\u30ae\u30ca\u30fc\u6b53\u8fce]\u003c/h1\u003e\n\u003cp\u003e\u203b\u305d\u306e\u3068\u304d\u305d\u306e\u3068\u304d\u3067\u8a71\u984c\u304c\u7570\u306a\u308a\u307e\u3059...\uff01\uff01\uff01\u003cbr\u003e\n\u203b\u4eca\u306e\u3068\u3053\u308d\u56de\u6570\u672a\u5b9a\u3067\u3059\u203b\u6c34\u66dc\u306b\u958b\u50ac\u3057\u3066\u3044\u304d\u307e\u3059\uff01\u003c/p\u003e\n\u003ch2\u003e\u3010\u5b9f\u65bd\u65e5\u6642\u30112021\u5e745\u670819\u65e5 20:00 ~ 21:00\u003c/h2\u003e\n\u003ch2\u003e\u3010\u5b9f\u65bd\u5834\u6240\u3011\u30aa\u30f3\u30e9\u30a4\u30f3\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003eZoom\u3092\u5229\u7528\u3057\u307e\u3059\u304c\u3001\u4e8b\u524d\u5171\u6709\u3055\u308c\u305fURL\u304b\u3089\u5f53\u65e5\u3054\u53c2\u52a0\u304f\u3060\u3055\u3044\u3002\u003c/strong\u003e\u003cbr\u003e\n\u003cstrong\u003e\u30eb\u30fc\u30e0ID\u304a\u3088\u3073\u30d1\u30b9\u30b3\u30fc\u30c9\u306f\u30e9\u30f3\u30c0\u30e0\u751f\u6210\u3067\u3059\u3002\u4ed6\u52c9\u5f37\u4f1a\u306b\u306f\u5229\u7528\u3067\u304d\u307e\u305b\u3093\u3002\u003c/strong\u003e\u003cbr\u003e\n\u003cstrong\u003e\u53c2\u52a0\u8005\u306e\u7686\u69d8\u306f\u3001\u30d7\u30e9\u30a4\u30d0\u30b7\u30fc\u4fdd\u8b77\u306e\u89b3\u70b9\u3088\u308a\u30dc\u30a4\u30b9\u3068\u30ab\u30e1\u30e9\u306f\u30c7\u30d5\u30a9\u30eb\u30c8\u3067OFF\u3068\u306a\u308a\u307e\u3059\u003c/strong\u003e\u003cbr\u003e\n\u003cstrong\u003e\u8cea\u7591\u306b\u3064\u304d\u307e\u3057\u3066\u306fZoom\u30c1\u30e3\u30c3\u30c8\u3067\u304a\u9858\u3044\u81f4\u3057\u307e\u3059\u3002\u003c/strong\u003e  \u003c/p\u003e\n\u003cp\u003e\u203bZoom\u3067\u914d\u4fe1\u3057\u307e\u3059\u3002\u914d\u4fe1\u5148URL\u306f\u3001\u30a4\u30d9\u30f3\u30c8\u524d\u65e5\u3068\u5f53\u65e5\u5915\u65b9\u306b\u9023\u7d61\u3057\u307e\u3059\u3002\u003cbr\u003e\n  connpass\u30a2\u30ab\u30a6\u30f3\u30c8\u306b\u7d10\u3065\u3044\u3066\u3044\u308b\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u5b9b\u306b\u5c4a\u304d\u307e\u3059\u306e\u3067\u3001\u305d\u3061\u3089\u3092\u3054\u78ba\u8a8d\u304f\u3060\u3055\u3044\u3002\u003cbr\u003e\n\u203b\u591a\u5c11\u3001\u97f3\u58f0\u30fb\u753b\u8cea\u306b\u554f\u984c\u304c\u3067\u3066\u304f\u308b\u53ef\u80fd\u6027\u3082\u3042\u308a\u307e\u3059\u3053\u3068\u3092\u3054\u4e86\u627f\u304f\u3060\u3055\u3044\u3002\u003cbr\u003e\n  \u306a\u304a\u3001\u63a5\u7d9a\u306b\u95a2\u3059\u308b\u4e0d\u5177\u5408\u5bfe\u5fdc\u65b9\u6cd5\u3084\u30af\u30ec\u30fc\u30e0\u7b49\u306b\u5bfe\u3057\u3066\u306f\u304a\u53d7\u3051\u3044\u305f\u3057\u304b\u306d\u307e\u3059\u3002  \u003c/p\u003e\n\u003ch2\u003e\u3010\u5bfe\u8c61\u3011\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e\u3000\u30fbPython\u306b\u95a2\u5fc3\u306e\u3042\u308b\u65b9\u003c/strong\u003e\u003cbr\u003e\n\u003cstrong\u003e\u3000\u30fbPython\u7d4c\u9a13\uff12\u5e74\u672a\u6e80\u306e\u65b9\u003c/strong\u003e\u003cbr\u003e\n\u003cstrong\u003e\u4e0a\u8a18\u4ee5\u5916\u3067\u3082\u3001\u3069\u306a\u305f\u3067\u3082\u3054\u53c2\u52a0\u3044\u305f\u3060\u3051\u307e\u3059\uff01\u003c/strong\u003e\u003cbr\u003e\n\u003cstrong\u003e\u4f55\u5ea6\u304b\u958b\u50ac\u3055\u308c\u308b\u52c9\u5f37\u4f1a\u306b\u7d99\u7d9a\u7684\u306b\u53c2\u52a0\u3057\u3066\u3044\u304f\u3053\u3068\u3067\u3001Python\u306e\u57fa\u790e\u3092\u4f53\u7cfb\u7684\u306b\u7406\u89e3\u3057\u3066\u3044\u304f\u3053\u3068\u3092\u76ee\u7684\u3068\u3057\u3066\u3044\u307e\u3059\u003c/strong\u003e  \u003c/p\u003e\n\u003ch2\u003e\u3010\u5b9f\u65bd\u6982\u8981\u3011\u003c/h2\u003e\n\u003cp\u003e\u203b\u500b\u4eba\u7684\u306a\u77e5\u898b\u304c\u542b\u307e\u308c\u3066\u3044\u308b\u305f\u3081\u3001\u4e00\u822c\u8ad6\u304b\u3089\u96e2\u308c\u308b\u5834\u5408\u3082\u3042\u308a\u307e\u3059\u306e\u3067\u3054\u4e86\u627f\u304f\u3060\u3055\u3044\u003cstrong\u003e\u003cbr\u003e\n\u003c/strong\u003e \u30ab\u30b8\u30e5\u30a2\u30eb\u52c9\u5f37\u4f1a\u306f\u3001\u30aa\u30f3\u30e9\u30a4\u30f3\u958b\u50ac\u306b\u306a\u3063\u3066\u304a\u308a\u307e\u3059\u3002**     \u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e \u2193\u2193\u2193\u30bf\u30a4\u30e0\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb\u2193\u2193\u2193 \u003c/strong\u003e  \u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e 19:45 ~ 20:00 (\u53d7\u4ed8)\u003c/strong\u003e\u003cbr\u003e\n\u003cstrong\u003e 20:00 ~ 21:00 (\u52c9\u5f37\u4f1a)\u003c/strong\u003e\u003cbr\u003e\n\u30fbdifflib --- \u5dee\u5206\u306e\u8a08\u7b97\u30e2\u30b8\u30e5\u30fc\u30eb\u003cbr\u003e\n\u30fbtextwrap --- \u30c6\u30ad\u30b9\u30c8\u306e\u6298\u308a\u8fd4\u3057\u3084\u5207\u308a\u8a70\u3081\u3092\u304a\u3053\u306a\u3046\u30e2\u30b8\u30e5\u30fc\u30eb  \u003c/p\u003e\n\u003cp\u003e\u203b\u7d42\u4e86\u6642\u523b\u306f\u3001\u5185\u5bb9\u306b\u3088\u3063\u3066\u524d\u5f8c\u3057\u307e\u3059\u306e\u3067\u3001\u3042\u3089\u304b\u3058\u3081\u3054\u4e86\u627f\u304f\u3060\u3055\u3044\u003cbr\u003e\n\u203b\u5f53\u65e5\u6700\u5f8c\u306b \u6b21\u56de\u4ee5\u964d\u3084, \u305d\u306e\u4ed6\u30b3\u30f3\u30c6\u30f3\u30c4\u306e\u3054\u7d39\u4ecb\u3092\u3055\u305b\u3066\u3044\u305f\u3060\u304d\u307e\u3059\u003cbr\u003e\n\u203b\u5f53\u65e5\u6295\u5f71\u3059\u308b\u8cc7\u6599\u7b49\u306b\u3064\u304d\u307e\u3057\u3066\u306f\u3054\u5e0c\u671b\u3059\u308b\u65b9\u306b\u306e\u307f\u5171\u6709\u3055\u305b\u3066\u3044\u305f\u3060\u304d\u307e\u3059(PDF\u7b49)\u003c/p\u003e", "hashtag": "\u30c7\u30fc\u30bf\u30b5\u30a4\u30a8\u30f3\u30b9", "max_num": null, "participants_count": 48, "waitlist_count": 0, "cancelled_count": 3, "owner_text": "\u682a\u5f0f\u4f1a\u793e\u30a8\u30af\u30c6\u30c3\u30af", "image": "https://connpass-tokyo.s3.amazonaws.com/thumbs/a0/80/a080945f23eec46aa3a1a6f06c48d930.png", "status": "live", "event_type": "participation", "allow_conflict_join": false, "start_datetime": "2021-05-19T20:00:00", "end_datetime": "2021-05-19T21:00:00", "open_start_datetime": "2021-05-05T10:00:00", "open_end_datetime": "2021-05-19T18:00:00", "publish_datetime": "2021-05-05T18:28:42", "lottery_publish_date": null, "lottery_publish_notification_sent": false, "place": {"id": 42255, "name": "\u30aa\u30f3\u30e9\u30a4\u30f3", "address": "\u30aa\u30f3\u30e9\u30a4\u30f3", "url": null, "lat": null, "lng": null, "map_image": null}, "presenter_title": "\u767a\u8868\u8005", "public_url": "https://extech-casual-learn-sendai.connpass.com/event/212493/", "cancel_policy": "\u3084\u3080\u3092\u5f97\u305a\u30ad\u30e3\u30f3\u30bb\u30eb\u3055\u308c\u308b\u5834\u5408\u3067\u3042\u3063\u3066\u3082\u3001\u3054\u8fd4\u91d1\u5bfe\u5fdc\u306f\u3057\u304b\u306d\u307e\u3059\u306e\u3067\u3001\n\u3054\u7406\u89e3\u306e\u3046\u3048\u3001\u3054\u53c2\u52a0\u304a\u3088\u3073\u3054\u5165\u91d1\u306e\u307b\u3046\u304a\u9858\u3044\u81f4\u3057\u307e\u3059\u3002\u4f55\u5352\u3054\u7406\u89e3\u3001\u3054\u4e86\u627f\u304f\u3060\u3055\u3044\u3002", "allow_receipt": true, "participation_types": [{"id": 305945, "name": "\u4e00\u822c\u306e\u65b9", "max_participants": 60, "join_fee": null, "place_fee": 0, "method": "fcfs", "participants_count": 46, "waitlist_count": 0, "cancelled_count": 3, "lottery_count": 0, "total_participants_count": 46}, {"id": 305946, "name": "\u5b66\u751f\u306e\u65b9", "max_participants": 5, "join_fee": null, "place_fee": 0, "method": "fcfs", "participants_count": 2, "waitlist_count": 0, "cancelled_count": 0, "lottery_count": 0, "total_participants_count": 2}]}, {parse: true})
+    });
+    
+    
+
+    $('.RemoveGroupMembershipButton').hover(function() {
+        $(this).text('　退会する　');
+    }, function() {
+        $(this).text('メンバーです');
+    });
+
+  });
+});
+</script>
+
+
+  <script id="CancelTemplate" type="text/html">
+    
+    
+
+<div class="popup">
+  <div class="popup_wrapper">
+    <div class="popup_header">
+      <h2 class="popup_h2">申し込みをキャンセルする</h2>
+      <p class="btn_close"><span class="btn btn_default btn_size_small modal-close"><span class="icon_close">閉じる</span></span></p>
+    </div>
+    <div class="popup_contents">
+      <h3 class="main_h3">コメント</h3>
+      <div id="add_entry_comment" class="add_area">
+        <p class="p note">※全員に公開されます。</p>
+        <p class="text_center"><input class="form_input_big" id="CancelComment" type="text" /></p>
+      </div>
+      <div class="btn_area"><button id="CancelSubmit" class="btn btn_action btn_size_large">キャンセルを確定する</button></div>
+    </div>
+  </div>
+</div>
+
+
+    
+  </script>
+
+
+<script type="text/javascript">
+window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "//platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+  return t;
+}(document, "script", "twitter-wjs"));
+
+twttr.ready(function (twttr) {
+    twttr.events.bind("tweet", function (event) {
+       if (event && typeof cst === "function") {
+         cst('twitter', 'tweet');
+       }
+    });
+});
+</script>
+
+
+<script src='https://www.google.com/recaptcha/api.js?render=6LfmFnoUAAAAABdVlQNqZkIyKWKRv1NkLfDx7-JY'></script>
+
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6LfmFnoUAAAAABdVlQNqZkIyKWKRv1NkLfDx7-JY', {action: 'event_detail'}).then(function(token) {
+    document.querySelectorAll('input.django-recaptcha-hidden-field').forEach(function (value) {
+        value.value = token;
+    });
+    return token;
+})
+    });
+</script>
+
+</body>
+</html>
